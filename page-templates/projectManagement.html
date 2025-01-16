@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Approval</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Main Container -->
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-900">Project Approval</h1>
+            </div>
+        </header>
+
+        <!-- Filter Section -->
+        <div class="max-w-7xl mx-auto mt-2 py-6 px-4 bg-white shadow-md rounded-lg sm:px-6 lg:px-8 md:w-10/12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <input type="text" placeholder="Search by project name" class="input input-bordered w-full" />
+                <select class="select select-bordered w-full">
+                    <option disabled selected>Filter by Category</option>
+                    <option>AI</option>
+                    <option>IoT</option>
+                    <option>Blockchain</option>
+                </select>
+                <select class="select select-bordered w-full">
+                    <option disabled selected>Filter by Status</option>
+                    <option>Pending</option>
+                    <option>Approved</option>
+                </select>
+                <button class="btn btn-primary w-full">Search</button>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <main class="py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Project Card Example -->
+                    <div class="card bg-white shadow-md hover:shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-blue-600">AI-Based Student Mentor System</h3>
+                        <p class="text-gray-600 text-justify mt-2">
+                            A platform that uses AI to provide tailored mentorship to students.
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            Contributors: <span class="font-semibold">John Doe, Jane Smith</span>
+                        </p>
+                        <div class="mt-4 flex grow justify-end items-end gap-2">
+                            <button class="btn btn-sm btn-success">Approve</button>
+                            <button class="btn btn-sm btn-error">Decline</button>
+                        </div>
+                    </div>
+
+                    <!-- Repeat for more project cards -->
+                    <div class="card bg-white shadow-md hover:shadow-lg p-6">
+                        <h3 class="text-xl font-semibold text-blue-600">Blockchain for Certificates</h3>
+                        <p class="text-gray-600 text-justify mt-2">
+                            A blockchain-based system for secure management of education certificates. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus.
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            Contributors: <span class="font-semibold">Alice Johnson, Bob Brown</span>
+                        </p>
+                        <div class="mt-4 flex grow justify-end items-end gap-2">
+                            <button class="btn btn-sm btn-success">Approve</button>
+                            <button class="btn btn-sm btn-error">Decline</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="join mt-4">
+                    <input
+                      class="join-item btn btn-square"
+                      type="radio"
+                      name="options"
+                      aria-label="1"
+                      checked="checked" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="4" />
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add interactive JavaScript if needed, such as actions on approve/decline buttons
+    </script>
+</body>
+
+</html>

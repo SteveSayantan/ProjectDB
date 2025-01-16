@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900 md:text-3xl">User Management</h1>
+                <button class="btn btn-sm btn-primary" id="add-user-btn">+ Add New User</button>
+            </div>
+        </header>
+
+        <!-- Search and Filter -->
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4">
+                <input type="text" placeholder="Search by name or email" class="input input-bordered w-full md:w-1/3" />
+                <select class="select select-bordered w-full md:w-1/4">
+                    <option disabled selected>Filter by Permission</option>
+                    <option>User</option>
+                    <option>Admin</option>
+                </select>
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+        <!-- User Table -->
+        <main class="flex-grow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white shadow overflow-x-scroll sm:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">University</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Role</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Example Row -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">john.doe@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Example University</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Admin</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="btn btn-sm btn-outline btn-primary">Edit</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="join mt-4">
+                    <input
+                      class="join-item btn btn-square"
+                      type="radio"
+                      name="options"
+                      aria-label="1"
+                      checked="checked" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />
+                    <input class="join-item btn btn-square" type="radio" name="options" aria-label="4" />
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add User Modal -->
+    <dialog id="add-user-modal" class="modal">
+        <form method="dialog" class="modal-box">
+            <h3 class="font-bold text-lg">Add New User</h3>
+            <div class="py-4">
+                <label class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" placeholder="Email" class="input input-bordered w-full" required />
+            </div>
+            <div class="py-4">
+                <label class="block text-sm font-medium text-gray-700">University</label>
+                <input type="text" placeholder="University" class="input input-bordered w-full" required />
+            </div>
+            <div class="py-4">
+                <label class="block text-sm font-medium text-gray-700">Role</label>
+                <select class="select select-bordered w-full" required>
+                    <option disabled selected>Select Role</option>
+                    <option>User</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+            <div class="py-4">
+                <label class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" placeholder="Password" class="input input-bordered w-full" required />
+            </div>
+            <div class="modal-action">
+                <button class="btn btn-primary">Save</button>
+                <button class="btn" formmethod="dialog">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script>
+        // Modal handling
+        const modal = document.getElementById("add-user-modal");
+        const openBtn = document.getElementById("add-user-btn");
+
+        openBtn.addEventListener("click", () => modal.showModal());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+export {default as About} from './About'
+export {default as ErrorPage} from './ErrorPage'
+export {default as Gallery} from './Gallery'
+export {default as Home} from './Home'
+export {default as Login} from './Login'
+export {default as Projects} from './Projects'
+export {default as Users} from './Users'

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SPKP Landing Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com" defer></script>
+    </head>
+
+    <!-- ******** TODO: fix the footer (add links etc.) *************  -->
+
+    <body class="bg-gray-100 text-gray-800">
+
+        <!-- Header -->
+        <nav class="bg-base-100">
+            <div class="navbar max-w-7xl mx-auto">
+                <ul class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-72 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li>
+                                <a>Gallery</a>
+                            </li>
+                            <li><a>About</a></li>
+                            <!-- <li><a>Login</a></li> -->
+                            <li>
+                                <details>
+                                    <summary>Dashboard</summary>
+                                    <ul class="p-2">
+                                        <li><a>Projects</a></li>
+                                        <li><a>Users</a></li>
+                                        <li><a>Profile</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl">ProjectDB</a>
+                </ul>
+                <ul class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li>
+                            <a>Gallery</a>
+                        </li>
+                        <li><a>About</a></li>
+                        <!-- <li><a>Login</a></li> -->
+                        <li>
+                            <details>
+                                <summary>Dashboard</summary>
+                                <ul class="p-2">
+                                    <li><a>Projects</a></li>
+                                    <li><a>Users</a></li>
+                                    <li><a>Profile</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        
+                        <li><a>Logout</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="bg-blue-600 text-white py-20">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4 lg:text-5xl">Innovate, Share, and Learn</h2>
+                <p class="text-lg mb-8 px-1 lg:text-xl">
+                    A platform to showcase student projects across Indian universities and colleges.
+                </p>
+                <a href="/projects" class="btn btn-primary">Explore Projects</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="max-w-7xl mx-auto px-4 py-16">
+            <h3 class="text-2xl font-semibold text-center mb-8 lg:text-3xl">Explore by Category</h3>
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 ">
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">AI</a>
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">IoT</a>
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">Blockchain</a>
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">Data Science</a>
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">Cybersecurity</a>
+                <a href="#" class="btn btn-outline btn-info lg:text-lg">Robotics</a>
+                <!-- Add more categories as needed -->
+            </div>
+        </section>
+
+        <!-- Recent Projects Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="text-2xl font-bold mb-8">Recent Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card bg-white shadow-md p-6 hover:shadow-lg">
+                        <h4 class="text-xl font-semibold text-blue-600">AI-Based Student Mentor System</h4>
+                        <p class="text-gray-600 mt-2">A system to provide AI-driven guidance for students.</p>
+                    </div>
+                    <div class="card bg-white shadow-md p-6 hover:shadow-lg">
+                        <h4 class="text-xl font-semibold text-blue-600">Blockchain for Education Certificates</h4>
+                        <p class="text-gray-600 mt-2">Secure certification management using blockchain technology.</p>
+                    </div>
+                    <div class="card bg-white shadow-md p-6 hover:shadow-lg">
+                        <h4 class="text-xl font-semibold text-blue-600">IoT-Based Smart Campus</h4>
+                        <p class="text-gray-600 mt-2">An IoT solution for efficient campus management.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <p>&copy; 2024 SPKP - Student Project Knowledge Platform</p>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
