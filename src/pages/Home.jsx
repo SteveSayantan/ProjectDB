@@ -1,5 +1,10 @@
+import { Hero } from "../components";
+
+
 const Home=()=>{
-    return <h1>Home Page</h1>
+    return <>
+        <Hero/>
+    </>
 }
 
 export default Home;
