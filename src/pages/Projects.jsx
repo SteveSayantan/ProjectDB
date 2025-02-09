@@ -5,13 +5,13 @@ const Projects = () => {
         <div className="min-h-screen bg-inherit">
             <header className=" shadow">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                    <h1 className="text-3xl font-bold text-white">
+                    <h1 className="text-3xl font-bold text-gray-300">
                         Project Approval
                     </h1>
                 </div>
             </header>
 
-            <div className="max-w-7xl mx-auto mt-2 py-6 px-4 bg-slate-900 shadow-md rounded-lg sm:px-6 lg:px-8 md:w-10/12">
+            <div className="max-w-7xl mx-auto mt-2 py-6 px-4 bg-slate-950 shadow-md rounded-lg sm:px-6 lg:px-8 md:w-10/12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <input
                         type="text"
