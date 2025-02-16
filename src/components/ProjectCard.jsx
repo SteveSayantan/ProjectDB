@@ -1,6 +1,7 @@
 import React from "react";
 
-const ProjectCard = ({title, description, contributors}) => {
+const ProjectCard = ({projectDetails}) => {
+    const {title, description, contributors} = projectDetails;
     return (
         <div className="card bg-slate-950 transition-shadow hover:shadow-[16px_0px_28px_rgba(0,0,0,0.6)]  p-6">
             <h3 className="text-xl font-semibold text-blue-600">

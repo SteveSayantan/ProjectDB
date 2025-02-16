@@ -1,5 +1,15 @@
 import ProjectCard from "../components/ProjectCard";
 
+const projectList = [
+    {
+        id: 1,
+        title: "Blockchain for Certificates",
+        description:
+            "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus.",
+        contributors: ["john", "Bob"],
+    },
+];
+
 const Projects = () => {
     return (
         <div className="min-h-screen bg-inherit">
@@ -40,27 +50,12 @@ const Projects = () => {
             <main className="py-6">
                 <div className="max-w-7xl mx-auto flex flex-col items-center gap-6 md:gap-10 px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        <ProjectCard
-                            title={"Blockchain for Certificates"}
-                            description={
-                                "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus."
-                            }
-                            contributors={["john", "Bob"]}
-                        />
-                        <ProjectCard
-                            title={"Blockchain for Certificates"}
-                            description={
-                                "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus."
-                            }
-                            contributors={["john", "Bob"]}
-                        />
-                        <ProjectCard
-                            title={"Blockchain for Certificates"}
-                            description={
-                                "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus."
-                            }
-                            contributors={["john", "Bob"]}
-                        />
+                        {projectList.map((project) => (
+                            <ProjectCard
+                                key={project?.id}
+                                projectDetails={project}
+                            />
+                        ))}
                     </div>
 
                     <div className="join">

@@ -1,6 +1,7 @@
 import React from "react";
 
-const UserDetails = ({email, university, role}) => {
+const UserDetails = ({user}) => {
+    const {email, university, role} = user;
     return (
         <tr>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">

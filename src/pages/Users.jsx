@@ -1,5 +1,26 @@
 import UserDetails from "../components/UserDetails";
 
+const users = [
+    {
+        id: 1,
+        email: "test@gmail.com",
+        university: "ABC university",
+        role: "Admin",
+    },
+    {
+        id: 2,
+        email: "test@gmail.com",
+        university: "ABC university",
+        role: "Admin",
+    },
+    {
+        id: 3,
+        email: "test@gmail.com",
+        university: "ABC university",
+        role: "Admin",
+    },
+];
+
 const Users = () => {
     return (
         <div className="min-h-screen flex flex-col">
@@ -9,7 +30,10 @@ const Users = () => {
                     <h1 className="text-2xl font-bold text-gray-300 md:text-3xl">
                         User Management
                     </h1>
-                    <button className="btn btn-sm btn-primary" id="add-user-btn">
+                    <button
+                        className="btn btn-sm btn-primary"
+                        id="add-user-btn"
+                    >
                         + Add New User
                     </button>
                 </div>
@@ -57,18 +81,9 @@ const Users = () => {
                             </thead>
                             <tbody className="bg-gray-900 divide-y divide-gray-400">
                                 {/* <!-- Example Row --> */}
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                <UserDetails email={"test@gmail.com"} university={"ABC university"} role={"Admin"}/>
-                                
+                                {users.map((user) => (
+                                    <UserDetails key={user?.id} user={user} />
+                                ))}
                             </tbody>
                         </table>
                     </div>
