@@ -1,5 +1,41 @@
-const Projects=()=>{
-    return <h1>Projects Page</h1>
-}
+import { ProjectCreateContainer, ProjectsContainer, ProjectSearchContainer } from "../components";
+
+const dummyProjects = [
+    {
+        id: 1,
+        title: "Blockchain for Certificates",
+        description: "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus.",
+        contributors: ["John", "Bob"],
+    },
+    {
+        id: 2,
+        title: "Blockchain for Certificates",
+        description: "A blockchain-based system for secure management of education certificates.",
+        contributors: ["John", "Bob"],
+    },
+    {
+        id: 3,
+        title: "Blockchain for Certificates and Something More Interesting",
+        description: "A blockchain-based system for secure management of education certificates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum amet eligendi, harum iste ducimus incidunt  nostrum sed, omnis architecto fuga, nisi accusantium nulla repellendus.",
+        contributors: ["John", "Bob"],
+    },
+];
+
+
+const Projects = () => {
+
+    return <main className="min-h-screen bg-base-200 py-3">
+            <ProjectCreateContainer/>
+            <ProjectSearchContainer />
+            <section className="mx-auto w-11/12 max-w-7xl mt-7">
+                <ul role="tablist" className="tabs tabs-bordered">
+                    <li role="tab" className="tab tab-active">Accepted</li>
+                    <li role="tab" className="tab">Pending</li>
+                    <li role="tab" className="tab">Rejected</li>
+                </ul>
+                <ProjectsContainer projects={dummyProjects}/>
+            </section>
+        </main>
+};
 
 export default Projects;

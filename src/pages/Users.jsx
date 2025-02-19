@@ -1,5 +1,15 @@
-const Users=()=>{
-    return <h1>Users Page</h1>
-}
+import { UserSearchContainer,UsersContainer } from "../components";
+
+
+const Users = () => {
+    return <main className="min-h-screen">
+        <UserSearchContainer />
+        <UsersContainer/>
+    </main>
+
+
+    {/* <!-- User Table --> */ }
+
+};
 
 export default Users;

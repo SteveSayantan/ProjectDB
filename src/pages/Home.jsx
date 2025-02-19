@@ -1,9 +1,9 @@
-import { Hero, FeaturedProjects } from "../components";
-
+import { Hero, Categories, FeaturedProjects } from "../components";
 
 const Home=()=>{
     return <>
         <Hero/>
+        <Categories/>
         <FeaturedProjects/>
     </>
 }

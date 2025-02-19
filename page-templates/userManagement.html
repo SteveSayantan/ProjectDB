@@ -12,27 +12,22 @@
 
 <body class="bg-gray-100 text-gray-800">
     <!-- Main Container -->
-    <div class="min-h-screen flex flex-col">
         <!-- Header -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900 md:text-3xl">User Management</h1>
-                <button class="btn btn-sm btn-primary" id="add-user-btn">+ Add New User</button>
-            </div>
-        </header>
+        
 
         <!-- Search and Filter -->
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap gap-4">
-                <input type="text" placeholder="Search by name or email" class="input input-bordered w-full md:w-1/3" />
-                <select class="select select-bordered w-full md:w-1/4">
+        <section class="px-4 py-4 max-w-7xl mx-auto md:flex md:gap-2">
+                <input type="text" placeholder="Search by name or email" class="input input-bordered w-full md:w-1/4" />
+                <select class="select select-bordered mt-3 w-full md:mt-0 md:w-1/4 ">
                     <option disabled selected>Filter by Permission</option>
                     <option>User</option>
                     <option>Admin</option>
                 </select>
-                <button class="btn btn-primary">Search</button>
-            </div>
-        </div>
+                <div class="flex items-center justify-between mt-3 px-2 md:mt-0 md:grow">
+                    <button class="btn btn-primary btn-sm md:btn-md">Search</button>
+                    <button class="btn btn-sm btn-primary md:btn-md" id="add-user-btn">+ Add New User</button>
+                </div>
+        </section>
 
         <!-- User Table -->
         <main class="flex-grow">
