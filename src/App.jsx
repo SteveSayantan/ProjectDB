@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { About, ErrorPage, Gallery, Home, Login, Projects, Users } from "./pages"
+import { About, AddProject, ErrorPage, Gallery, Home, Login, Projects, Users } from "./pages"
 import { Layout } from "./components"
+import {action as createProjectAction} from './components/ProjectCreateContainer'
 
 const router=createBrowserRouter([
   {
@@ -30,6 +31,12 @@ const router=createBrowserRouter([
       {
         path:'projects',
         element:<Projects/>
+        
+      },
+      {
+        path:'add-project',
+        element:<AddProject/>,
+        action: createProjectAction
       },
     ]
   },

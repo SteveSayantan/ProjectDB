@@ -1,4 +1,52 @@
 import { Link, NavLink } from "react-router-dom";
+import { FiAlignLeft } from "react-icons/fi";
+
+const links = {
+    public: [
+        {
+            id: 1,
+            name: "home",
+            path: "/"
+        },
+        {
+            id: 2,
+            name: "gallery",
+            path: "/gallery"
+        },
+        {
+            id: 3,
+            name: "about",
+            path: "/about"
+        },
+        {
+            id: 4,
+            name: "login",
+            path: "/login"
+        }
+    ],
+    dashboard: [
+        {
+            id: 1,
+            name: "add project",
+            path: "/add-project"
+        },
+        {
+            id: 2,
+            name: "projects",
+            path: "/projects"
+        },
+        {
+            id: 3,
+            name: "users",
+            path: "/users"
+        },
+        {
+            id: 4,
+            name: "profile",
+            path: "/profile"
+        }
+    ]
+}
 
 const Navbar = () => {
     return <nav >
@@ -6,27 +54,24 @@ const Navbar = () => {
             <ul className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex="0" role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
+                        <FiAlignLeft className="h-5 w-5"/>
                     </div>
                     <ul tabIndex="0"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-72 p-2 shadow">
-                        <li><NavLink to='/'>Home</NavLink></li>
-                        <li>
-                            <NavLink to='/gallery'>Gallery</NavLink>
-                        </li>
-                        <li><NavLink to='/about'>About</NavLink></li>
-                        <li><NavLink to='/login'>Login</NavLink></li>
+                        {
+                            links.public.map(({id,name,path})=>{
+                                return <li key={id} className="capitalize"><NavLink to={path}>{name}</NavLink></li>
+                            })
+                        }
                         <li>
                             <details>
                                 <summary>Dashboard</summary>
                                 <ul className="p-2">
-                                    <li><NavLink to='/projects'>Projects</NavLink></li>
-                                    <li><NavLink to='/users'>Users</NavLink></li>
-                                    <li><NavLink to='/profile'>Profile</NavLink></li>
+                                {
+                                    links.dashboard.map(({id,name,path})=>{
+                                        return <li key={id} className="capitalize"><NavLink to={path}>{name}</NavLink></li>
+                                    })
+                                }
                                 </ul>
                             </details>
                         </li>
@@ -38,19 +83,20 @@ const Navbar = () => {
             </ul>
             <ul className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 items-center">
-                    <li><NavLink to='/'>Home</NavLink></li>
+                    {
+                            links.public.map(({id,name,path})=>{
+                                return <li key={id} className="capitalize"><NavLink to={path}>{name}</NavLink></li>
+                            })
+                    }
                     <li>
-                        <NavLink to='/gallery'>Gallery</NavLink>
-                    </li>
-                    <li><NavLink to='/about'>About</NavLink></li>
-                    <li><NavLink to='/login'>Login</NavLink></li>
-                    <li>
-                        <details>
+                        <details className="dropdown dropdown-content">
                             <summary>Dashboard</summary>
-                            <ul className="p-2">
-                                <li><NavLink to='/projects'>Projects</NavLink></li>
-                                <li><NavLink to='/users'>Users</NavLink></li>
-                                <li><NavLink to='/profile'>Profile</NavLink></li>
+                            <ul tabIndex={0} className="p-2 menu w-32 z-[1]">
+                                {
+                                    links.dashboard.map(({id,name,path})=>{
+                                        return <li key={id} className="capitalize"><NavLink to={path}>{name}</NavLink></li>
+                                    })
+                                }
                             </ul>
                         </details>
                     </li>

@@ -24,7 +24,9 @@ const dummyProjects = [
 const Gallery=()=>{
     return <main className="min-h-screen bg-base-200 py-3">
         <ProjectSearchContainer/>
-        <ProjectsContainer projects={dummyProjects}/>
+        <section className="mx-auto w-11/12 max-w-7xl mt-7">
+            <ProjectsContainer projects={dummyProjects}/>
+        </section>
     </main>
 }
 

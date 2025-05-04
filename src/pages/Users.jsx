@@ -8,7 +8,6 @@ const Users = () => {
     </main>
 
 
-    {/* <!-- User Table --> */ }
 
 };
 

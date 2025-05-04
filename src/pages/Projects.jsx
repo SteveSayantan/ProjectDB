@@ -1,4 +1,4 @@
-import { ProjectCreateContainer, ProjectsContainer, ProjectSearchContainer } from "../components";
+import { ProjectsContainer, ProjectSearchContainer, ProjectSearchContainerAdmin } from "../components";
 
 const dummyProjects = [
     {
@@ -25,14 +25,9 @@ const dummyProjects = [
 const Projects = () => {
 
     return <main className="min-h-screen bg-base-200 py-3">
-            <ProjectCreateContainer/>
             <ProjectSearchContainer />
+            <ProjectSearchContainerAdmin/>
             <section className="mx-auto w-11/12 max-w-7xl mt-7">
-                <ul role="tablist" className="tabs tabs-bordered">
-                    <li role="tab" className="tab tab-active">Accepted</li>
-                    <li role="tab" className="tab">Pending</li>
-                    <li role="tab" className="tab">Rejected</li>
-                </ul>
                 <ProjectsContainer projects={dummyProjects}/>
             </section>
         </main>

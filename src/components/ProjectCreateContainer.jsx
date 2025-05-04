@@ -1,9 +1,16 @@
-import { Form } from "react-router-dom";
+import { redirect,Form} from "react-router-dom";
 import FormInput from "./FormInput";
 
+
+export const action=async ({request})=>{
+    const data= await request.formData();
+    console.log(...data.entries());
+    return redirect('/projects');        // we must return a value or null 
+}
+
 const ProjectCreateContainer = () => {
-    
-    return <Form className="px-4 py-6 bg-base-100 shadow-lg rounded-xl max-w-7xl md:px-6 md:py-8 md:mx-auto md:w-11/12 md:grid md:grid-cols-2 md:gap-6 lg:px-10">
+
+    return <Form className="px-4 py-6 bg-base-100 shadow-lg rounded-xl max-w-7xl md:px-6 md:py-8 md:mx-auto md:w-11/12 md:grid md:grid-cols-2 md:gap-6 lg:px-10" method="POST">
 
         <h2 className="text-2xl font-semibold text-accent-content mb-4 text-center md:col-span-2 md:text-left">Create New Project</h2>
 
