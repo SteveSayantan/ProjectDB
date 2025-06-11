@@ -3,8 +3,12 @@ import FormInput from "./FormInput";
 
 
 export const action=async ({request})=>{
+
     const data= await request.formData();
-    console.log(...data.entries());
+    const dataObj= Object.fromEntries(data);
+
+    dataObj.contributors=dataObj.contributors.split(",");
+    
     return redirect('/projects');        // we must return a value or null 
 }
 
@@ -23,12 +27,21 @@ const ProjectCreateContainer = () => {
             </div>
             <select className="select select-bordered w-full" defaultValue="" required>
                 <option disabled value="">Choose a category</option>
-                <option value="ai/ml">AI/ML</option>
+                <option value="aiml">AI/ML</option>
                 <option value="iot">IoT</option>
             </select>
         </label>
 
-        <FormInput label="Contributors" type="text" name="contributors" placeholder="Alan, Bob, Jimmy" />
+        <label className="form-control w-full">
+            <div className="label">
+               <span className="label-text capitalize font-medium text-base-content ">Contributors</span> 
+            </div>
+            <input
+                name="contributors"
+                type='text' placeholder="Alan,Bob,Jimmy" pattern="([a-zA-Z]+( [a-zA-Z]+)*)(,[a-zA-Z]+( [a-zA-Z]+)*)*" required
+                className="input input-bordered w-full" title="Comma-separated names without leading or trailing whitespaces"
+            />
+        </label>
 
         <label className="form-control w-full col-span-2">
             <div className="label">
@@ -38,7 +51,6 @@ const ProjectCreateContainer = () => {
         </label>
 
         <button type="submit" className="btn btn-primary col-span-2 mt-2">Add Project</button>
-
     </Form>
 
 }
