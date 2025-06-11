@@ -1,7 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { About, AddProject, ErrorPage, Gallery, Home, Login, Projects, Users } from "./pages"
 import { Layout } from "./components"
+
+
 import {action as createProjectAction} from './components/ProjectCreateContainer'
+import { action as createUserAction, loader as usersLoader } from "./pages/Users"
 
 const router=createBrowserRouter([
   {
@@ -10,7 +13,7 @@ const router=createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home/>
+        element:<Home/>,
       },
       {
         path:'gallery',
@@ -26,7 +29,9 @@ const router=createBrowserRouter([
       },
       {
         path:'users',
-        element:<Users/>
+        element:<Users/>,
+        action:createUserAction,
+        loader:usersLoader
       },
       {
         path:'projects',
